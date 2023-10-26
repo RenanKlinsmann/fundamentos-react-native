@@ -1,16 +1,31 @@
-import React, {Component} from "react";
-import { Text, View } from "react-native";
+import React from "react";
+import { View, StyleSheet } from "react-native";
 import Primeiro from './componentes/Primeiro'
 import PrimeiroProps from "./componentes/PrimeiroProps";
+import Multi, {Comp2, Comp3} from "./componentes/Multi";
+import Aleatorio from "./componentes/Aleatorio";
+
 export default () =>  {
     
         return (
-            <View>
-                {/*<Primeiro/>*/}
+            <View style={style.App}>
+                <Aleatorio min={7} max={99}/>
+                <Aleatorio min={7} max={99}/>
+                <Aleatorio min={7} max={99}/>
+                <Multi/>
+                <Comp2/>
+                <Comp3/>
+                <Primeiro/>
                 <PrimeiroProps numero={10}/>
-
             </View>
-                
         )
     
 }
+
+const style = StyleSheet.create({
+    App: {
+        flexGrow: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+})
