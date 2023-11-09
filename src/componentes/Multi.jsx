@@ -3,6 +3,7 @@ import { Text } from "react-native";
 import Estilos from "../estilos";
 
 
+
 function Comp (){
     return <Text  style={Estilos.text}>Comp #01</Text>
 }
