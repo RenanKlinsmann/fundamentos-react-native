@@ -5,6 +5,7 @@ import Estilos from "../estilos";
 export default ({ inicial = 0, passo = 1 }) => {
 
     const [numero, setNumero] = useState(inicial);
+    const [resultado, setResultado] = useState("");
 
     function inc(){
        setNumero(numero + passo);
@@ -14,8 +15,14 @@ export default ({ inicial = 0, passo = 1 }) => {
         setNumero(numero - passo);
     }
 
+    const parImpar = _=> numero % 2 == 0 ? setResultado("Par") 
+                                         : setResultado("Impar");
+
     return (
         <>
+            <Text style={Estilos.textDois}>
+                {resultado}
+            </Text>
             <Text style={Estilos.textDois}>
                 {numero}
             </Text>
@@ -27,6 +34,10 @@ export default ({ inicial = 0, passo = 1 }) => {
                 <Button
                     title="-"
                     onPress={dec}
+                />
+                <Button
+                    title="%"
+                    onPress={parImpar}
                 />
             </View>
             
